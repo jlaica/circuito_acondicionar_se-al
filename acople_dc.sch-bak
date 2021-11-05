@@ -1,0 +1,701 @@
+EESchema Schematic File Version 4
+EELAYER 30 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L pspice:VSOURCE V1
+U 1 1 60CE010D
+P 2400 1550
+F 0 "V1" H 2628 1596 50  0000 L CNN
+F 1 "6" H 2628 1505 50  0000 L CNN
+F 2 "" H 2400 1550 50  0001 C CNN
+F 3 "~" H 2400 1550 50  0001 C CNN
+	1    2400 1550
+	0    -1   -1   0   
+$EndComp
+$Comp
+L pspice:VSOURCE V2
+U 1 1 60CE0B62
+P 3300 1550
+F 0 "V2" H 3528 1596 50  0000 L CNN
+F 1 "6" H 3528 1505 50  0000 L CNN
+F 2 "" H 3300 1550 50  0001 C CNN
+F 3 "~" H 3300 1550 50  0001 C CNN
+	1    3300 1550
+	0    -1   -1   0   
+$EndComp
+$Comp
+L pspice:0 #GND02
+U 1 1 60CE17F3
+P 3050 1200
+F 0 "#GND02" H 3050 1100 50  0001 C CNN
+F 1 "0" H 3050 1289 50  0000 C CNN
+F 2 "" H 3050 1200 50  0001 C CNN
+F 3 "~" H 3050 1200 50  0001 C CNN
+	1    3050 1200
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	2700 1550 2850 1550
+Wire Wire Line
+	2850 1200 2850 1550
+Wire Wire Line
+	2850 1200 3050 1200
+Connection ~ 2850 1550
+Wire Wire Line
+	2850 1550 3000 1550
+$Comp
+L power:VDD #PWR01
+U 1 1 60CE2B3A
+P 1950 1550
+F 0 "#PWR01" H 1950 1400 50  0001 C CNN
+F 1 "VDD" H 1965 1723 50  0000 C CNN
+F 2 "" H 1950 1550 50  0001 C CNN
+F 3 "" H 1950 1550 50  0001 C CNN
+	1    1950 1550
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	1950 1550 2100 1550
+$Comp
+L power:VSS #PWR02
+U 1 1 60CE3DDB
+P 3750 1550
+F 0 "#PWR02" H 3750 1400 50  0001 C CNN
+F 1 "VSS" H 3765 1723 50  0000 C CNN
+F 2 "" H 3750 1550 50  0001 C CNN
+F 3 "" H 3750 1550 50  0001 C CNN
+	1    3750 1550
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	3600 1550 3750 1550
+Text Notes 1400 4450 0    50   ~ 0
+.tran 10u 20m 0
+$Comp
+L Diode:1N4148WS D1
+U 1 1 60CFD1B0
+P 3650 3250
+F 0 "D1" V 3604 3330 50  0000 L CNN
+F 1 "1N4148WS" V 3695 3330 50  0000 L CNN
+F 2 "Diode_SMD:D_SOD-323" H 3650 3075 50  0001 C CNN
+F 3 "https://www.vishay.com/docs/85751/1n4148ws.pdf" H 3650 3250 50  0001 C CNN
+F 4 "D" H 3650 3250 50  0001 C CNN "Spice_Primitive"
+F 5 "DI_1N4148WT" H 3650 3250 50  0001 C CNN "Spice_Model"
+F 6 "Y" H 3650 3250 50  0001 C CNN "Spice_Netlist_Enabled"
+F 7 "2 1" H 3650 3250 50  0001 C CNN "Spice_Node_Sequence"
+F 8 "/home/jlaica/Documentos/acondicionamiento/1n4148.lib" H 3650 3250 50  0001 C CNN "Spice_Lib_File"
+	1    3650 3250
+	0    1    1    0   
+$EndComp
+$Comp
+L pspice:VSOURCE V3
+U 1 1 60D01134
+P 2250 4000
+F 0 "V3" H 2478 4046 50  0000 L CNN
+F 1 "sin(0 0.8 60 )" H 2478 3955 50  0000 L CNN
+F 2 "" H 2250 4000 50  0001 C CNN
+F 3 "~" H 2250 4000 50  0001 C CNN
+	1    2250 4000
+	1    0    0    -1  
+$EndComp
+$Comp
+L pspice:0 #GND01
+U 1 1 60D01B7B
+P 2250 4600
+F 0 "#GND01" H 2250 4500 50  0001 C CNN
+F 1 "0" H 2250 4689 50  0000 C CNN
+F 2 "" H 2250 4600 50  0001 C CNN
+F 3 "~" H 2250 4600 50  0001 C CNN
+	1    2250 4600
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2250 4300 2250 4600
+$Comp
+L Device:R R1
+U 1 1 60D09D6F
+P 3150 3750
+F 0 "R1" H 3220 3796 50  0000 L CNN
+F 1 "1M" H 3220 3705 50  0000 L CNN
+F 2 "" V 3080 3750 50  0001 C CNN
+F 3 "~" H 3150 3750 50  0001 C CNN
+	1    3150 3750
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R2
+U 1 1 60D0A51C
+P 3400 3550
+F 0 "R2" V 3193 3550 50  0000 C CNN
+F 1 "10k" V 3284 3550 50  0000 C CNN
+F 2 "" V 3330 3550 50  0001 C CNN
+F 3 "~" H 3400 3550 50  0001 C CNN
+	1    3400 3550
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	3150 3600 3150 3550
+Wire Wire Line
+	3150 3550 3250 3550
+Wire Wire Line
+	2250 3700 2250 3550
+Wire Wire Line
+	2250 3550 3150 3550
+Connection ~ 3150 3550
+$Comp
+L Diode:1N4148WS D2
+U 1 1 60D0FB1D
+P 3650 3850
+F 0 "D2" V 3604 3930 50  0000 L CNN
+F 1 "1N4148WS" V 3695 3930 50  0000 L CNN
+F 2 "Diode_SMD:D_SOD-323" H 3650 3675 50  0001 C CNN
+F 3 "https://www.vishay.com/docs/85751/1n4148ws.pdf" H 3650 3850 50  0001 C CNN
+F 4 "D" H 3650 3850 50  0001 C CNN "Spice_Primitive"
+F 5 "DI_1N4148WT" H 3650 3850 50  0001 C CNN "Spice_Model"
+F 6 "Y" H 3650 3850 50  0001 C CNN "Spice_Netlist_Enabled"
+F 7 "2 1" H 3650 3850 50  0001 C CNN "Spice_Node_Sequence"
+F 8 "/home/jlaica/Documentos/acondicionamiento/1n4148.lib" H 3650 3850 50  0001 C CNN "Spice_Lib_File"
+	1    3650 3850
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	3650 3400 3650 3550
+Wire Wire Line
+	3550 3550 3650 3550
+Connection ~ 3650 3550
+Wire Wire Line
+	3650 3550 3650 3700
+$Comp
+L power:VSS #PWR05
+U 1 1 60D10B94
+P 3650 4150
+F 0 "#PWR05" H 3650 4000 50  0001 C CNN
+F 1 "VSS" H 3665 4323 50  0000 C CNN
+F 2 "" H 3650 4150 50  0001 C CNN
+F 3 "" H 3650 4150 50  0001 C CNN
+	1    3650 4150
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	3650 4000 3650 4150
+$Comp
+L power:VDD #PWR04
+U 1 1 60D1200C
+P 3650 2900
+F 0 "#PWR04" H 3650 2750 50  0001 C CNN
+F 1 "VDD" H 3665 3073 50  0000 C CNN
+F 2 "" H 3650 2900 50  0001 C CNN
+F 3 "" H 3650 2900 50  0001 C CNN
+	1    3650 2900
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3650 2900 3650 3100
+$Comp
+L pspice:0 #GND04
+U 1 1 60D13AF0
+P 3150 4200
+F 0 "#GND04" H 3150 4100 50  0001 C CNN
+F 1 "0" H 3150 4289 50  0000 C CNN
+F 2 "" H 3150 4200 50  0001 C CNN
+F 3 "~" H 3150 4200 50  0001 C CNN
+	1    3150 4200
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3150 3900 3150 4200
+$Comp
+L Device:R R3
+U 1 1 60D1B5E8
+P 4000 3550
+F 0 "R3" V 3900 3550 50  0000 C CNN
+F 1 "2.2k" V 4100 3550 50  0000 C CNN
+F 2 "" V 3930 3550 50  0001 C CNN
+F 3 "~" H 4000 3550 50  0001 C CNN
+	1    4000 3550
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	3850 3550 3650 3550
+Wire Wire Line
+	4200 3350 4200 2900
+Wire Wire Line
+	4200 2900 5200 2900
+Wire Wire Line
+	5200 2900 5200 3450
+$Comp
+L power:VDD #PWR09
+U 1 1 60D24314
+P 4500 3850
+F 0 "#PWR09" H 4500 3700 50  0001 C CNN
+F 1 "VDD" H 4515 4023 50  0000 C CNN
+F 2 "" H 4500 3850 50  0001 C CNN
+F 3 "" H 4500 3850 50  0001 C CNN
+	1    4500 3850
+	-1   0    0    1   
+$EndComp
+$Comp
+L power:VSS #PWR08
+U 1 1 60D25E1F
+P 4500 2650
+F 0 "#PWR08" H 4500 2500 50  0001 C CNN
+F 1 "VSS" H 4515 2823 50  0000 C CNN
+F 2 "" H 4500 2650 50  0001 C CNN
+F 3 "" H 4500 2650 50  0001 C CNN
+	1    4500 2650
+	1    0    0    -1  
+$EndComp
+$Comp
+L Amplifier_Operational:TL081 U1
+U 1 1 60D3EF70
+P 4600 3450
+F 0 "U1" H 4944 3404 50  0000 L CNN
+F 1 "TL081" H 4944 3495 50  0000 L CNN
+F 2 "" H 4650 3500 50  0001 C CNN
+F 3 "http://www.ti.com/lit/ds/symlink/tl081.pdf" H 4750 3600 50  0001 C CNN
+F 4 "X" H 4600 3450 50  0001 C CNN "Spice_Primitive"
+F 5 "TL081" H 4600 3450 50  0001 C CNN "Spice_Model"
+F 6 "Y" H 4600 3450 50  0001 C CNN "Spice_Netlist_Enabled"
+F 7 "3 2 7 4 6" H 4600 3450 50  0001 C CNN "Spice_Node_Sequence"
+F 8 "/home/jlaica/Documentos/acondicionamiento/tl081.lib" H 4600 3450 50  0001 C CNN "Spice_Lib_File"
+	1    4600 3450
+	1    0    0    1   
+$EndComp
+Wire Wire Line
+	4500 3850 4500 3750
+Wire Wire Line
+	4500 3150 4500 2650
+Wire Wire Line
+	4300 3550 4150 3550
+Wire Wire Line
+	4300 3350 4200 3350
+Wire Wire Line
+	4900 3450 5200 3450
+$Comp
+L Device:R R7
+U 1 1 60CE7F4C
+P 5500 3450
+F 0 "R7" V 5400 3450 50  0000 C CNN
+F 1 "10k" V 5600 3450 50  0000 C CNN
+F 2 "" V 5430 3450 50  0001 C CNN
+F 3 "~" H 5500 3450 50  0001 C CNN
+	1    5500 3450
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Device:R R4
+U 1 1 60CEA614
+P 3050 5250
+F 0 "R4" V 2950 5250 50  0000 C CNN
+F 1 "2.2k" V 3150 5250 50  0000 C CNN
+F 2 "" V 2980 5250 50  0001 C CNN
+F 3 "~" H 3050 5250 50  0001 C CNN
+	1    3050 5250
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R5
+U 1 1 60CEB40A
+P 3050 5850
+F 0 "R5" V 2950 5850 50  0000 C CNN
+F 1 "2.2k" V 3150 5850 50  0000 C CNN
+F 2 "" V 2980 5850 50  0001 C CNN
+F 3 "~" H 3050 5850 50  0001 C CNN
+	1    3050 5850
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R6
+U 1 1 60CF087B
+P 4600 5650
+F 0 "R6" V 4500 5650 50  0000 C CNN
+F 1 "10k" V 4700 5650 50  0000 C CNN
+F 2 "" V 4530 5650 50  0001 C CNN
+F 3 "~" H 4600 5650 50  0001 C CNN
+	1    4600 5650
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	3050 5400 3050 5550
+Wire Wire Line
+	3550 5550 3050 5550
+Connection ~ 3050 5550
+Wire Wire Line
+	3050 5550 3050 5700
+$Comp
+L power:VCC #PWR03
+U 1 1 60CF5C19
+P 3050 5000
+F 0 "#PWR03" H 3050 4850 50  0001 C CNN
+F 1 "VCC" H 3065 5173 50  0000 C CNN
+F 2 "" H 3050 5000 50  0001 C CNN
+F 3 "" H 3050 5000 50  0001 C CNN
+	1    3050 5000
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3050 5000 3050 5100
+$Comp
+L pspice:0 #GND03
+U 1 1 60CF730A
+P 3050 6250
+F 0 "#GND03" H 3050 6150 50  0001 C CNN
+F 1 "0" H 3050 6339 50  0000 C CNN
+F 2 "" H 3050 6250 50  0001 C CNN
+F 3 "~" H 3050 6250 50  0001 C CNN
+	1    3050 6250
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3050 6000 3050 6250
+Wire Wire Line
+	5350 3450 5200 3450
+Connection ~ 5200 3450
+Wire Wire Line
+	3550 5750 3400 5750
+$Comp
+L power:VSS #PWR07
+U 1 1 60D042F5
+P 3750 6100
+F 0 "#PWR07" H 3750 5950 50  0001 C CNN
+F 1 "VSS" H 3765 6273 50  0000 C CNN
+F 2 "" H 3750 6100 50  0001 C CNN
+F 3 "" H 3750 6100 50  0001 C CNN
+	1    3750 6100
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	3750 6100 3750 5950
+$Comp
+L power:VDD #PWR06
+U 1 1 60D0656C
+P 3750 5200
+F 0 "#PWR06" H 3750 5050 50  0001 C CNN
+F 1 "VDD" H 3765 5373 50  0000 C CNN
+F 2 "" H 3750 5200 50  0001 C CNN
+F 3 "" H 3750 5200 50  0001 C CNN
+	1    3750 5200
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3750 5200 3750 5350
+Wire Wire Line
+	4150 5650 4350 5650
+Wire Wire Line
+	3400 5750 3400 6450
+Wire Wire Line
+	3400 6450 4350 6450
+Wire Wire Line
+	4350 6450 4350 5650
+Connection ~ 4350 5650
+Wire Wire Line
+	4350 5650 4450 5650
+$Comp
+L power:VDD #PWR010
+U 1 1 60D0FC11
+P 6650 3750
+F 0 "#PWR010" H 6650 3600 50  0001 C CNN
+F 1 "VDD" H 6665 3923 50  0000 C CNN
+F 2 "" H 6650 3750 50  0001 C CNN
+F 3 "" H 6650 3750 50  0001 C CNN
+	1    6650 3750
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:VSS #PWR011
+U 1 1 60D0FFB4
+P 6650 4650
+F 0 "#PWR011" H 6650 4500 50  0001 C CNN
+F 1 "VSS" H 6665 4823 50  0000 C CNN
+F 2 "" H 6650 4650 50  0001 C CNN
+F 3 "" H 6650 4650 50  0001 C CNN
+	1    6650 4650
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	6650 4650 6650 4500
+Wire Wire Line
+	6650 3900 6650 3750
+Wire Wire Line
+	6450 4100 5950 4100
+Wire Wire Line
+	5950 4100 5950 3450
+Wire Wire Line
+	5950 3450 5650 3450
+Wire Wire Line
+	5950 4100 5200 4100
+Wire Wire Line
+	5200 4100 5200 5650
+Wire Wire Line
+	5200 5650 4750 5650
+Connection ~ 5950 4100
+$Comp
+L Device:R R8
+U 1 1 60D2D95D
+P 5800 5550
+F 0 "R8" H 5730 5504 50  0000 R CNN
+F 1 "10k" H 5730 5595 50  0000 R CNN
+F 2 "" V 5730 5550 50  0001 C CNN
+F 3 "~" H 5800 5550 50  0001 C CNN
+	1    5800 5550
+	-1   0    0    1   
+$EndComp
+$Comp
+L Device:R R9
+U 1 1 60D2ED8F
+P 6200 5250
+F 0 "R9" V 6407 5250 50  0000 C CNN
+F 1 "10k" V 6316 5250 50  0000 C CNN
+F 2 "" V 6130 5250 50  0001 C CNN
+F 3 "~" H 6200 5250 50  0001 C CNN
+	1    6200 5250
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	5800 5400 5800 5250
+Wire Wire Line
+	5800 5250 6050 5250
+Wire Wire Line
+	6450 4300 5800 4300
+$Comp
+L pspice:0 #GND05
+U 1 1 60D35EEC
+P 5800 5950
+F 0 "#GND05" H 5800 5850 50  0001 C CNN
+F 1 "0" H 5800 6039 50  0000 C CNN
+F 2 "" H 5800 5950 50  0001 C CNN
+F 3 "~" H 5800 5950 50  0001 C CNN
+	1    5800 5950
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5800 5700 5800 5950
+Wire Wire Line
+	5800 4300 5800 5250
+Connection ~ 5800 5250
+Wire Wire Line
+	6350 5250 7400 5250
+Wire Wire Line
+	7400 5250 7400 4200
+Wire Wire Line
+	7400 4200 7050 4200
+$Comp
+L Amplifier_Operational:TL081 U2
+U 1 1 60D4D81B
+P 3850 5650
+F 0 "U2" H 4194 5696 50  0000 L CNN
+F 1 "TL081" H 4194 5605 50  0000 L CNN
+F 2 "" H 3900 5700 50  0001 C CNN
+F 3 "http://www.ti.com/lit/ds/symlink/tl081.pdf" H 4000 5800 50  0001 C CNN
+F 4 "X" H 3850 5650 50  0001 C CNN "Spice_Primitive"
+F 5 "TL081" H 3850 5650 50  0001 C CNN "Spice_Model"
+F 6 "Y" H 3850 5650 50  0001 C CNN "Spice_Netlist_Enabled"
+F 7 "/home/jlaica/Documentos/acondicionamiento/tl081.lib" H 3850 5650 50  0001 C CNN "Spice_Lib_File"
+F 8 "3 2 7 4 6" H 3850 5650 50  0001 C CNN "Spice_Node_Sequence"
+	1    3850 5650
+	1    0    0    -1  
+$EndComp
+$Comp
+L Amplifier_Operational:TL081 U3
+U 1 1 60D4F66B
+P 6750 4200
+F 0 "U3" H 7094 4246 50  0000 L CNN
+F 1 "TL081" H 7094 4155 50  0000 L CNN
+F 2 "" H 6800 4250 50  0001 C CNN
+F 3 "http://www.ti.com/lit/ds/symlink/tl081.pdf" H 6900 4350 50  0001 C CNN
+F 4 "X" H 6750 4200 50  0001 C CNN "Spice_Primitive"
+F 5 "TL081" H 6750 4200 50  0001 C CNN "Spice_Model"
+F 6 "Y" H 6750 4200 50  0001 C CNN "Spice_Netlist_Enabled"
+F 7 "3 2 7 4 6" H 6750 4200 50  0001 C CNN "Spice_Node_Sequence"
+F 8 "/home/jlaica/Documentos/acondicionamiento/tl081.lib" H 6750 4200 50  0001 C CNN "Spice_Lib_File"
+	1    6750 4200
+	1    0    0    -1  
+$EndComp
+$Comp
+L pspice:VSOURCE V4
+U 1 1 60D62756
+P 5200 1750
+F 0 "V4" H 5428 1796 50  0000 L CNN
+F 1 "5" H 5428 1705 50  0000 L CNN
+F 2 "" H 5200 1750 50  0001 C CNN
+F 3 "~" H 5200 1750 50  0001 C CNN
+	1    5200 1750
+	1    0    0    -1  
+$EndComp
+$Comp
+L pspice:0 #GND06
+U 1 1 60D639DD
+P 5200 2250
+F 0 "#GND06" H 5200 2150 50  0001 C CNN
+F 1 "0" H 5200 2339 50  0000 C CNN
+F 2 "" H 5200 2250 50  0001 C CNN
+F 3 "~" H 5200 2250 50  0001 C CNN
+	1    5200 2250
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R10
+U 1 1 60CECE4F
+P 7800 4200
+F 0 "R10" V 7593 4200 50  0000 C CNN
+F 1 "330" V 7684 4200 50  0000 C CNN
+F 2 "" V 7730 4200 50  0001 C CNN
+F 3 "~" H 7800 4200 50  0001 C CNN
+	1    7800 4200
+	0    1    1    0   
+$EndComp
+$Comp
+L Diode:1N4148WS D3
+U 1 1 60CED92D
+P 8200 3800
+F 0 "D3" V 8154 3880 50  0000 L CNN
+F 1 "1N4148WS" V 8245 3880 50  0000 L CNN
+F 2 "Diode_SMD:D_SOD-323" H 8200 3625 50  0001 C CNN
+F 3 "https://www.vishay.com/docs/85751/1n4148ws.pdf" H 8200 3800 50  0001 C CNN
+F 4 "D" H 8200 3800 50  0001 C CNN "Spice_Primitive"
+F 5 "DI_1N4148WT" H 8200 3800 50  0001 C CNN "Spice_Model"
+F 6 "Y" H 8200 3800 50  0001 C CNN "Spice_Netlist_Enabled"
+F 7 "/home/jlaica/Documentos/acondicionamiento/1n4148.lib" H 8200 3800 50  0001 C CNN "Spice_Lib_File"
+F 8 "2 1" H 8200 3800 50  0001 C CNN "Spice_Node_Sequence"
+	1    8200 3800
+	0    1    1    0   
+$EndComp
+$Comp
+L Diode:1N4148WS D4
+U 1 1 60CEE331
+P 8200 4600
+F 0 "D4" V 8154 4680 50  0000 L CNN
+F 1 "1N4148WS" V 8245 4680 50  0000 L CNN
+F 2 "Diode_SMD:D_SOD-323" H 8200 4425 50  0001 C CNN
+F 3 "https://www.vishay.com/docs/85751/1n4148ws.pdf" H 8200 4600 50  0001 C CNN
+F 4 "D" H 8200 4600 50  0001 C CNN "Spice_Primitive"
+F 5 "DI_1N4148WT" H 8200 4600 50  0001 C CNN "Spice_Model"
+F 6 "Y" H 8200 4600 50  0001 C CNN "Spice_Netlist_Enabled"
+F 7 "/home/jlaica/Documentos/acondicionamiento/1n4148.lib" H 8200 4600 50  0001 C CNN "Spice_Lib_File"
+F 8 "2 1" H 8200 4600 50  0001 C CNN "Spice_Node_Sequence"
+	1    8200 4600
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	7650 4200 7400 4200
+Connection ~ 7400 4200
+Wire Wire Line
+	8200 3950 8200 4200
+Wire Wire Line
+	7950 4200 8200 4200
+Connection ~ 8200 4200
+Wire Wire Line
+	8200 4200 8200 4450
+$Comp
+L power:VDD #PWR012
+U 1 1 60CF1DAA
+P 8200 3450
+F 0 "#PWR012" H 8200 3300 50  0001 C CNN
+F 1 "VDD" H 8215 3623 50  0000 C CNN
+F 2 "" H 8200 3450 50  0001 C CNN
+F 3 "" H 8200 3450 50  0001 C CNN
+	1    8200 3450
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:VSS #PWR013
+U 1 1 60CF299F
+P 8200 4950
+F 0 "#PWR013" H 8200 4800 50  0001 C CNN
+F 1 "VSS" H 8215 5123 50  0000 C CNN
+F 2 "" H 8200 4950 50  0001 C CNN
+F 3 "" H 8200 4950 50  0001 C CNN
+	1    8200 4950
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	8200 4750 8200 4950
+Wire Wire Line
+	8200 3650 8200 3450
+Wire Wire Line
+	5200 2250 5200 2050
+$Comp
+L power:VCC #PWR014
+U 1 1 60D01273
+P 5200 1250
+F 0 "#PWR014" H 5200 1100 50  0001 C CNN
+F 1 "VCC" H 5215 1423 50  0000 C CNN
+F 2 "" H 5200 1250 50  0001 C CNN
+F 3 "" H 5200 1250 50  0001 C CNN
+	1    5200 1250
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5200 1250 5200 1450
+$Comp
+L Amplifier_Operational:TL081 U4
+U 1 1 60D2D27F
+P 9300 4300
+F 0 "U4" H 9644 4346 50  0000 L CNN
+F 1 "TL081" H 9644 4255 50  0000 L CNN
+F 2 "" H 9350 4350 50  0001 C CNN
+F 3 "http://www.ti.com/lit/ds/symlink/tl081.pdf" H 9450 4450 50  0001 C CNN
+F 4 "X" H 9300 4300 50  0001 C CNN "Spice_Primitive"
+F 5 "TL081" H 9300 4300 50  0001 C CNN "Spice_Model"
+F 6 "Y" H 9300 4300 50  0001 C CNN "Spice_Netlist_Enabled"
+F 7 "3 2 7 4 6" H 9300 4300 50  0001 C CNN "Spice_Node_Sequence"
+F 8 "/home/jlaica/Documentos/acondicionamiento/tl081.lib" H 9300 4300 50  0001 C CNN "Spice_Lib_File"
+	1    9300 4300
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:VDD #PWR015
+U 1 1 60D2E1BD
+P 9200 3850
+F 0 "#PWR015" H 9200 3700 50  0001 C CNN
+F 1 "VDD" H 9215 4023 50  0000 C CNN
+F 2 "" H 9200 3850 50  0001 C CNN
+F 3 "" H 9200 3850 50  0001 C CNN
+	1    9200 3850
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:VSS #PWR016
+U 1 1 60D2E5A3
+P 9200 4850
+F 0 "#PWR016" H 9200 4700 50  0001 C CNN
+F 1 "VSS" H 9215 5023 50  0000 C CNN
+F 2 "" H 9200 4850 50  0001 C CNN
+F 3 "" H 9200 4850 50  0001 C CNN
+	1    9200 4850
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	9200 3850 9200 4000
+Wire Wire Line
+	9200 4600 9200 4850
+Wire Wire Line
+	9000 4200 8200 4200
+Wire Wire Line
+	9000 4400 8750 4400
+Wire Wire Line
+	8750 4400 8750 5100
+Wire Wire Line
+	8750 5100 10000 5100
+Wire Wire Line
+	10000 5100 10000 4300
+Wire Wire Line
+	10000 4300 9600 4300
+Text GLabel 10250 4300 2    50   Input ~ 0
+adc_uc
+Wire Wire Line
+	10250 4300 10000 4300
+Connection ~ 10000 4300
+$EndSCHEMATC
