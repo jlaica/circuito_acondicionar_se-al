@@ -5,3 +5,4 @@ En este repositorio se encuentran los archivos de un circuito acondcionador de s
 En el sigueinte link puedes encontrar el video demostrativo para la simulación.
 [Video demo click aqui](https://www.youtube.com/watch?v=K12Exg5Oqd0&t=47s)
 
+![alt text](https://github.com/jlaica/circuito_acondicionar_senal/blob/main/circuit_acondicionador.png)
